@@ -1,0 +1,260 @@
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+		/>
+
+		<link
+			href="{{url_for('static', filename = 'calendar_test/lib/main.css')}}"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.1/css/all.css"
+			rel="stylesheet"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,800;1,300&family=Roboto&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{{url_for('static', filename ='clockpicker-gh-pages/assets/css/bootstrap.min.css')}}"
+		/>
+
+		<!-- ClockPicker Stylesheet -->
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{{url_for('static', filename ='clockpicker-gh-pages/dist/bootstrap-clockpicker.min.css')}}"
+		/>
+		<link
+			rel="stylesheet"
+			href="{{url_for('static', filename = 'dist/style.css')}}"
+		/>
+		<script src="{{url_for('static', filename = 'calendar_test/lib/main.js')}}"></script>
+	</head>
+	<body class="body">
+		<div class="addEvent">
+			<div class="overlay has-fade" style="top: 6rem"></div>
+			<div>
+				<h5 id="calenName">Personal Calendar</h5>
+			</div>
+			<div class="addEvent__menu webContainer has-fade">
+				<form id="addingEvent" method="POST">
+					<h1 align="center" class="addEvent__title">Create Event</h1>
+
+					<div class="form-group">
+						<div class="form-check form-check-inline">
+							<input
+								class="form-check-input"
+								type="radio"
+								name="inlineRadioOptions"
+								id="createEve"
+								value="createEve"
+							/>
+							<label class="form-check-label" for="createEve"
+								>Create event</label
+							>
+						</div>
+						<div class="form-check form-check-inline">
+							<input
+								class="form-check-input"
+								type="radio"
+								name="inlineRadioOptions"
+								id="deleteEve"
+								value="deleteEve"
+							/>
+							<label class="form-check-label" for="deleteEve">
+								Delete event</label
+							>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="eventName" class="addEvent__label">
+							Name of Event</label
+						>
+						<input
+							type="text"
+							class="form-control input-large"
+							id="eventName"
+							name="eventName"
+							placeholder="Enter name of event"
+						/>
+					</div>
+					<div class="form-group">
+						<label for="startD" class="addEvent__label"> Start date</label>
+						<input
+							type="date"
+							class="form-control"
+							id="startD"
+							name="startD"
+							placeholder="Example: 2021-11-07"
+						/>
+					</div>
+					<div class="form-group">
+						<label for="startT" class="addEvent__label"> Start time</label>
+
+						<div
+							class="input-group clockpicker"
+							data-placement="right"
+							data-align="top"
+							data-autoclose="true"
+						>
+							<input
+								type="text"
+								class="form-control"
+								id="startT"
+								name="startT"
+								placeholder="08:32 or Empty If no Time"
+								value="noTime"
+							/>
+							<span class="input-group-addon">
+								<span class="glyphicon glyphicon-time"></span>
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="endD" class="addEvent__label"> End date</label>
+						<input
+							type="date"
+							class="form-control"
+							id="endD"
+							name="endD"
+							placeholder="Example: 2021-11-08"
+						/>
+					</div>
+					<div class="form-group">
+						<label for="endT" class="addEvent__label"> End time</label>
+
+						<div
+							class="input-group clockpicker"
+							data-placement="right"
+							data-align="top"
+							data-autoclose="true"
+						>
+							<input
+								type="text"
+								class="form-control"
+								placeholder="09:32 or Empty If no Time"
+								id="endT"
+								name="endT"
+								value="noTime"
+							/>
+							<span class="input-group-addon">
+								<span class="glyphicon glyphicon-time"></span>
+							</span>
+						</div>
+					</div>
+					<button type="submit" class="button Register__Button">Submit</button>
+				</form>
+			</div>
+
+			<div
+				class="addEvent__menu addEvent__dashboard has-fade-db"
+				style="top: 6rem"
+			>
+				<a
+					href="https://github.com/InderbirSGill/CMPE-131-Group-WeTried"
+					target="_blank"
+					class="header__github"
+					id="DBTitleIMG"
+					><img
+						src="{{url_for('static', filename= 'Images/jinx.png')}}"
+						width="60"
+						height="50"
+						alt="WeTried"
+						srcset=""
+					/>
+					We-Tried</a
+				>
+				<div style="width: 300px; height: 2px; border: 1px solid gray"></div>
+				<ul>
+					<li>
+						<a href="homepage">
+							<i class="bi bi-house-door"></i>
+							Homepage
+						</a>
+					</li>
+					<li>
+						<a href="about"> <i class="bi bi-info-circle"></i> About</a>
+					</li>
+					<li>
+						<a href="tasklist"> <i class="bi bi-bookmark"></i>Task List</a>
+					</li>
+				</ul>
+				<div style="width: 300px; height: 2px; border: 1px solid gray"></div>
+				<ul>
+					<li>
+						<a href="myTeam">
+							<i class="bi bi-collection"></i>
+							My Teams
+						</a>
+					</li>
+					<li>
+						<a href="joinTeam"> <i class="bi bi-diagram-3"></i>Join Teams</a>
+					</li>
+					<li>
+						<a href="createTeam"> <i class="bi bi-people"></i>Create Team</a>
+					</li>
+				</ul>
+				<div style="width: 300px; height: 2px; border: 1px solid gray"></div>
+				<ul id="lastList">
+					<li>
+						<a href="logout"> <i class="bi bi-door-open"></i>Logout</a>
+					</li>
+				</ul>
+				<a id="LLC" href="about">
+					<i class="bi bi-chat-right"></i>
+					We-tried LLC
+				</a>
+			</div>
+		</div>
+
+		<div id="calendar"></div>
+	</body>
+	{%block script%}
+
+	<script
+		type="text/javascript"
+		src="{{url_for('static', filename= 'js/events.json')}}"
+	></script>
+
+	<script
+		type="text/javascript"
+		src="{{url_for('static', filename= 'js/calen.js')}}"
+	></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+		integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+		crossorigin="anonymous"
+	></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+		integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+		crossorigin="anonymous"
+	></script>
+	<script
+		type="text/javascript"
+		src="{{url_for('static', filename= 'clockpicker-gh-pages/assets/js/bootstrap.min.js')}}"
+	></script>
+
+	<!-- ClockPicker script -->
+	<script
+		type="text/javascript"
+		src="{{url_for('static', filename= 'clockpicker-gh-pages/src/clockpicker.js')}}"
+	></script>
+	<script type="text/javascript">
+		$('.clockpicker').clockpicker();
+	</script>
+	{%endblock%}
+</html>

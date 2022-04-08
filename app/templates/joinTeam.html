@@ -1,0 +1,69 @@
+{% extends "tasklist.html"%} {%block title%} Join Teams {%endblock%} {%block
+pagetitle%}
+<div class="joinTeam__title">
+	<h1>Join Team</h1>
+</div>
+{%endblock%} {%block cardBox%}
+<div id="contain" class="joinTeam webContainer" style="width: 1000px">
+	<h3 class="joinTeam__description">Click on any available teams to join</h3>
+	<form method="POST">
+		<div id="formG" class="form-group">
+			<!-- <div class="form-group row">
+				<input
+					class="form-check-input"
+					type="radio"
+					name="RadioOptions"
+					id="deleteEve"
+					value="deleteEve"
+				/>
+				<label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+				<div class="col-sm-4">
+					<input
+						type="email"
+						class="form-control"
+						id="inputEmail3"
+						placeholder="Email"
+					/>
+				</div>
+			</div> -->
+			<!-- <div class="form-check">
+				<input
+					class="form-check-input"
+					type="radio"
+					name="RadioOptions"
+					id="deleteEve"
+					value="deleteEve"
+				/>
+				<label class="form-check-label" for="deleteEve"> Delete event</label>
+			</div>  -->
+		</div>
+
+		<div class="form-group row">
+			<label
+				id="passLabel"
+				for="inputEmail3"
+				class="col-sm-2 col-form-label PasswordNone"
+				>:)</label
+			>
+			<div id="passInput" class="col-sm-4 PasswordNone">
+				<input
+					type="password"
+					class="form-control"
+					id="passInput"
+					name="passInput"
+					placeholder="password"
+					style="margin-top: 30px"
+				/>
+			</div>
+		</div>
+		<div class="joinTeam__button">
+			<button type="submit" class="button Register__Button">Submit</button>
+		</div>
+	</form>
+</div>
+{%endblock%} {%block JS%}
+<script
+	type="text/javascript"
+	src="{{url_for('static', filename= 'js/joinTeam.js')}}"
+></script>
+{%endblock%}

@@ -1,0 +1,101 @@
+// #navTL {
+// 	position: relative;
+// 	// padding: 7px 30px;
+// 	padding-top: 15px;
+// 	padding-bottom: 15px;
+// 	// font-family: 'Zen Old Mincho', serif;
+// 	font-family: 'Open Sans', sans-serif;
+// 	font-size: 20px;
+// 	font-weight: 400;
+// 	width: 100%;
+// 	height: 70px;
+// }
+#teams {
+	color: lightgray;
+}
+.Tasklist {
+	&__title {
+		position: relative;
+		text-align: center;
+		// padding-left: 30px;
+		padding-top: 20px;
+		color: rgba(31, 160, 247, 0.973);
+		z-index: -1;
+	}
+	&__username {
+		color: white;
+		padding-top: 20px;
+		margin-left: 1200px;
+	}
+	&__toggle {
+		padding-left: 35px;
+		> span {
+			background-color: white;
+		}
+	}
+	&__dashboard {
+		top: 69px;
+	}
+	&__logout {
+		margin-right: 35px;
+	}
+	&__display {
+		border: solid blue 1px;
+
+		width: 1000px;
+		height: 1000px;
+		flex-shrink: 0;
+		flex-grow: 0;
+	}
+	&__button {
+		margin-right: 35px;
+	}
+	&__teamTabs {
+		box-shadow: none;
+		border-radius: 0px;
+		text-align: center;
+		&:hover {
+			box-shadow: none;
+		}
+		background-color: white;
+		color: #007bff;
+	}
+}
+.box {
+	display: flex;
+	align-content: flex-start;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.cardBox {
+	&__zIndex {
+		position: relative;
+		z-index: -1;
+	}
+	&__cardTitle {
+		font-size: 30px;
+	}
+	&__cards {
+		margin-right: 20px;
+		padding-left: 0px;
+
+		// height: 200px;
+	}
+	&__tag {
+		background: linear-gradient(to right, #211e1e, #117aca);
+	}
+}
+.removeTag {
+	display: none;
+}
+iframe {
+	display: none;
+}
+input[type='radio'] {
+	// margin-top: -1px;
+	vertical-align: middle;
+}
+.PasswordNone {
+	display: none;
+}

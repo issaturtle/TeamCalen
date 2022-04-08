@@ -1,0 +1,67 @@
+.joinTeam {
+	// border: solid 1px $gold;
+	background: white;
+	border-radius: 20px;
+	box-shadow: 0 4px 14px $gold;
+	width: 50%;
+	height: auto;
+	margin-top: 50px;
+	&__title {
+		padding-top: 20px;
+		color: rgba(31, 160, 247, 0.973);
+	}
+	&__description {
+		text-align: center;
+	}
+	&__button {
+		text-align: center;
+	}
+	&__label {
+		margin-left: 0px;
+	}
+}
+.createTeam {
+	margin-top: 7%;
+	&__labels {
+		color: white;
+	}
+}
+.switchZindex {
+	z-index: -1;
+}
+.teamCardCenter {
+	text-align: center;
+}
+.leaveButton {
+	margin-left: 10px;
+}
+.tabButtons {
+	border-radius: 0px;
+}
+.teamCardWidth {
+	width: 300px;
+}
+
+.taskListTabs {
+	&__title {
+		padding: 20px;
+		text-align: center;
+		background: linear-gradient(to right, #211e1e, #117aca);
+		margin-top: 20px;
+		color: $gold;
+		border: solid 1px gray;
+	}
+	&__Buttons {
+		border-radius: 0px;
+		box-shadow: none;
+		&:hover {
+			box-shadow: none;
+		}
+	}
+	&__Width {
+		width: 700px;
+	}
+}
+.flxGrw {
+	flex-grow: 0;
+}
